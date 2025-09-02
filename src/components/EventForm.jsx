@@ -23,4 +23,7 @@ export default function EventForm({ event, date, onClose, refreshEvents }) {
       .then((res) => res.json())
       .then((data) => setBills(data));
   }, []);
-  
+  // Update form values
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
