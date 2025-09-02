@@ -13,4 +13,14 @@ export default function EventForm({ event, date, onClose, refreshEvents }) {
     relatedChoreId: event?.relatedChoreId || "",
     relatedBillId: event?.relatedBillId || "",
   });
+  // 🔹 Fetch dropdown data (chores & bills)
+  useEffect(() => {
+    fetch("http://localhost:3000/chores")
+      .then((res) => res.json())
+      .then((data) => setChores(data));
+
+    fetch("http://localhost:3000/bills")
+      .then((res) => res.json())
+      .then((data) => setBills(data));
+  }, []);
   
