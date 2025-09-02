@@ -42,5 +42,56 @@ export default function CalendarModal({ event, date, onClose, refreshEvents }) {
           ✕
         </button>
 
-        
-        
+        {/* If editing → show form */}
+        {isEditing ? (
+          <EventForm
+            event={event}
+            date={date}
+            onClose={onClose}
+            refreshEvents={refreshEvents}
+          />
+        ) : (
+          <div>
+            {/* Event details */}
+            <h2 className="text-xl font-bold mb-2">{event.title}</h2>
+            <p className="text-gray-600">{event.description}</p>
+            <p className="mt-2 text-sm text-gray-500">
+              {new Date(event.start).toLocaleString()} -{" "}
+              {new Date(event.end).toLocaleString()}
+            </p>
+
+            {/* Linked Chore */}
+            {relatedChore && (
+              <div className="mt-3 p-2 border rounded bg-gray-100">
+                <strong>Related Chore:</strong> {relatedChore.title}
+              </div>
+            )}
+
+            {/* Linked Bill */}
+            {relatedBill && (
+              <div className="mt-3 p-2 border rounded bg-gray-100">
+                <strong>Related Bill:</strong> {relatedBill.title}
+              </div>
+            )}
+
+            {/* Buttons */}
+            <div className="mt-4 flex gap-3">
+              <button
+                onClick={() => setIsEditing(true)}
+                className="bg-blue-600 text-white px-4 py-2 rounded"
+              >
+                Edit
+              </button>
+              <button
+                onClick={handleDelete}
+                className="bg-red-600 text-white px-4 py-2 rounded"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
