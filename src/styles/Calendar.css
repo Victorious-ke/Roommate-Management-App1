@@ -16,3 +16,9 @@
   color: #2c3e50;
 }
 
+/* Grid Layout */
+.calendar-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
