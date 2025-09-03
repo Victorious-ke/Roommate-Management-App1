@@ -57,3 +57,26 @@
   font-style: italic;
 }
 
+/* Form */
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.event-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+.event-form input,
+.event-form textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+.event-form textarea {
+  resize: vertical;
+}
+
