@@ -1,12 +1,69 @@
-# React + Vite
+## Notifications Feature
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This branch introduces a Notifications Center to the app. Users can now view, filter, and manage in-app notifications in one place.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Notification Bell (Navbar)
 
-## Expanding the ESLint configuration
+Shows unread count.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Dropdown preview of recent notifications.
+
+Links to the full Notification Center.
+
+Notification Center Page (/notifications)
+
+Displays all notifications in a scrollable list.
+
+Supports filtering by type (bills, chores, messages, events).
+
+Filter by unread vs all.
+
+Ability to:
+
+Mark a single notification as read (click it).
+
+Mark all as read.
+
+Clear all notifications.
+
+Integration with Authentication
+
+Notifications are only available when the user is logged in (isAuthenticated = true).
+
+Guests are redirected to /login if they attempt to access /notifications.
+
+## Implementation Details
+
+State Management: Powered by zustand via useNotificationStore.
+
+Routes:
+
+/notifications → full Notification Center (protected).
+
+/ (Home) → shows a notification summary teaser.
+
+Components:
+
+NotificationsPage.jsx → main notification center UI.
+
+Navbar.jsx → notification bell with unread count.
+
+ProtectedRoute.jsx → wrapper to protect private routes.
+
+## Testing the Feature
+
+Start the app:
+
+npm run dev
+
+
+Go to Home (/) → You’ll see a notification summary.
+
+Go to Login (/login) → Use the temporary “Mock Login” button until real login is merged.
+
+Once logged in:
+
+Navbar appears with notification bell.
+
+Click the bell to preview notifications or go to Notification Center.
