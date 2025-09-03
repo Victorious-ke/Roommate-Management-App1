@@ -6,3 +6,13 @@
   padding: 2rem;
   color: #333;
 }
+
+/* Page Title */
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
