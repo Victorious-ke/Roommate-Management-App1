@@ -1,0 +1,8 @@
+/* Background */
+.calendar-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1262da, #e98009);
+  font-family: "Segoe UI", sans-serif;
+  padding: 2rem;
+  color: #333;
+}
