@@ -14,4 +14,12 @@ function CalendarPage() {
     endTime: "",
   });
 
+  // Fetch events from db.json
+  useEffect(() => {
+    fetch("http://localhost:3000/events")
+      .then((res) => res.json())
+      .then((data) => setEvents(data))
+      .catch((err) => console.error("Error fetching events:", err));
+  }, []);
+
   
