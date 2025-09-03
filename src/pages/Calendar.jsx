@@ -51,4 +51,42 @@ function CalendarPage() {
     }
   };
 
-  
+  // Filter events for selected day
+  const eventsForDate = events.filter(
+    (event) =>
+      format(new Date(event.startTime), "yyyy-MM-dd") ===
+      format(date, "yyyy-MM-dd")
+  );
+
+  return (
+    <div className="calendar-page">
+      <h1 className="page-title">📅 Roommate Calendar</h1>
+
+      <div className="calendar-container">
+        {/* Calendar */}
+        <div className="calendar-card">
+          <Calendar onChange={setDate} value={date} />
+        </div>
+
+        {/* Events */}
+        <div className="events-card">
+          <h2 className="section-title">Events on {format(date, "PPP")}</h2>
+          {eventsForDate.length > 0 ? (
+            <ul className="events-list">
+              {eventsForDate.map((event) => (
+                <li key={event.id} className="event-item">
+                  <h3>{event.title}</h3>
+                  <p>{event.description}</p>
+                  <small>
+                    {format(new Date(event.startTime), "p")} -{" "}
+                    {format(new Date(event.endTime), "p")}
+                  </small>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="no-events">No events today.</p>
+          )}
+        </div>
+
+        
