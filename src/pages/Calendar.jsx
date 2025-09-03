@@ -22,4 +22,33 @@ function CalendarPage() {
       .catch((err) => console.error("Error fetching events:", err));
   }, []);
 
+  // Add new event
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const eventToAdd = {
+      ...newEvent,
+      id: Date.now().toString(),
+      createdBy: "1",
+      participants: ["1"],
+      startTime: new Date(newEvent.startTime).toISOString(),
+      endTime: new Date(newEvent.endTime).toISOString(),
+      relatedType: "custom",
+      relatedId: "0",
+    };
+
+    try {
+      const res = await fetch("http://localhost:3000/events", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(eventToAdd),
+      });
+      if (res.ok) {
+        setEvents([...events, eventToAdd]);
+        setNewEvent({ title: "", description: "", startTime: "", endTime: "" });
+      }
+    } catch (err) {
+      console.error("Error adding event:", err);
+    }
+  };
+
   
