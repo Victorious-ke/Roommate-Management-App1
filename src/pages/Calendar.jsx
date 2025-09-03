@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { format } from "date-fns";
-import "./Calendar.css"; // custom styling
+import "..styles/Calendar.css"; // custom styling
 
 function CalendarPage() {
   const [date, setDate] = useState(new Date());
@@ -60,7 +60,7 @@ function CalendarPage() {
 
   return (
     <div className="calendar-page">
-      <h1 className="page-title"> Roommate Calendar</h1>
+      <h1 className="page-title">📅 Roommate Calendar</h1>
 
       <div className="calendar-container">
         {/* Calendar */}
