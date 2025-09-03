@@ -80,3 +80,20 @@
   resize: vertical;
 }
 
+/* Button */
+.add-btn {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  border: none;
+  padding: 0.8rem;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.add-btn:hover {
+  background: linear-gradient(135deg, #eb4d4b, #ff6b81);
+}
+
+
