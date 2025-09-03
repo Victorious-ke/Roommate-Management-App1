@@ -22,3 +22,14 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
+
+/* Cards */
+.calendar-card,
+.events-card,
+.form-card {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
