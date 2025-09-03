@@ -60,7 +60,7 @@ function CalendarPage() {
 
   return (
     <div className="calendar-page">
-      <h1 className="page-title">📅 Roommate Calendar</h1>
+      <h1 className="page-title"> Roommate Calendar</h1>
 
       <div className="calendar-container">
         {/* Calendar */}
