@@ -89,4 +89,61 @@ function CalendarPage() {
           )}
         </div>
 
-        
+        {/* Add Event Form */}
+        <div className="form-card">
+          <h2 className="section-title">➕ Add New Event</h2>
+          <form onSubmit={handleSubmit} className="event-form">
+            <label>
+              Title
+              <input
+                type="text"
+                value={newEvent.title}
+                onChange={(e) =>
+                  setNewEvent({ ...newEvent, title: e.target.value })
+                }
+                required
+              />
+            </label>
+            <label>
+              Description
+              <textarea
+                value={newEvent.description}
+                onChange={(e) =>
+                  setNewEvent({ ...newEvent, description: e.target.value })
+                }
+                required
+              />
+            </label>
+            <label>
+              Start Time
+              <input
+                type="datetime-local"
+                value={newEvent.startTime}
+                onChange={(e) =>
+                  setNewEvent({ ...newEvent, startTime: e.target.value })
+                }
+                required
+              />
+            </label>
+            <label>
+              End Time
+              <input
+                type="datetime-local"
+                value={newEvent.endTime}
+                onChange={(e) =>
+                  setNewEvent({ ...newEvent, endTime: e.target.value })
+                }
+                required
+              />
+            </label>
+            <button type="submit" className="add-btn">
+              Add Event
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default CalendarPage;
