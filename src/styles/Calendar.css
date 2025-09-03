@@ -40,3 +40,20 @@
   color: #34495e;
 }
 
+/* Events */
+.events-list {
+  list-style: none;
+  padding: 0;
+}
+.event-item {
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-left: 5px solid #ff7e5f;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+.no-events {
+  color: #888;
+  font-style: italic;
+}
+
